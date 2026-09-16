@@ -4,4 +4,4 @@ __pycache__/
 
 *.pyc
 comic_git_engine
-build/
+comic_git_dev/
