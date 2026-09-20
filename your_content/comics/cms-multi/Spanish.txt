@@ -1,0 +1,3 @@
+NARRADOR: El primer panel de prueba es amarillo y tiene el numero uno.
+
+NARRADOR: El segundo panel de prueba es azul y tiene el numero dos.
