@@ -1,0 +1,51 @@
+links = [
+    { name = "Home", url = "/" },
+    { name = "Archive", url = "/archive/" },
+    { name = "Infinite Scroll", url = "/infinite_scroll/" },
+    { name = "Shop", url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ", open_in_new_tab = true },
+    { name = "Patreon", url = "https://www.patreon.com/comic_git", open_in_new_tab = true },
+]
+pages = [
+    { template_name = "index", title = "Welcome to comic_git!" },
+    { template_name = "latest", title = "" },
+    { template_name = "archive", title = "Archive" },
+    { template_name = "tagged", title = "Tagged Posts" },
+    { template_name = "infinite_scroll", title = "Infinite Scroll" },
+    { template_name = "404", title = "Page Not Found" },
+]
+
+[engine]
+version = "cms"
+
+[comic]
+name = "This is your new comic_git site!"
+author = "Your Name Here"
+description = "Explore a free webcomic-based static site generator delivered through GitHub!"
+
+[site]
+date_format = "%B %d, %Y"
+timezone = "US/Pacific"
+
+[archive]
+date_format = "%m/%d/%Y"
+use_thumbnails = true
+
+[transcripts]
+default_language = "English"
+enabled = true
+
+[image_processing]
+thumbnail_size = "10%"
+create_thumbnails = true
+overwrite_existing_images = false
+
+[rss]
+build = true
+
+[cms]
+enabled = true
+repository = "comic-git/comic_git_dev"
+branch = "cms"
+backend_base_url = "https://github-oauth-worker-test-pgtx3iu5gq-uw.a.run.app"
+backend_auth_endpoint = "https://github-oauth-worker-test-pgtx3iu5gq-uw.a.run.app/auth"
+editorial_workflow = false
