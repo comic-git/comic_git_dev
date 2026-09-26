@@ -1,0 +1,8 @@
+links = [
+    { name = "Main Comic", url = "/" },
+    { name = "Side Story Archive", url = "/extras/side-story/archive/" },
+]
+
+[comic]
+name = "Side Story Fixture"
+description = "An extra-comic fixture for CMS migration coverage."
