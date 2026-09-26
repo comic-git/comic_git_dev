@@ -53,5 +53,5 @@ enabled = true
 repository = "comic-git/comic_git_dev"
 branch = "cms"
 backend_base_url = "https://github-oauth-worker-test-pgtx3iu5gq-uw.a.run.app"
-backend_auth_endpoint = "https://github-oauth-worker-test-pgtx3iu5gq-uw.a.run.app/auth"
+backend_auth_endpoint = "auth"
 editorial_workflow = false
