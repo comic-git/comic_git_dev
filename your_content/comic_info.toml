@@ -49,7 +49,7 @@ overwrite_existing_images = false
 build = true
 
 [cms]
-enabled = false
+enabled = true
 repository = "comic-git/comic_git_devxxxx"
 branch = "cmsdsadsa"
 backend_base_url = "https://github-oauth-worker-test-pgtx3iu5gq-uw.a.run.appfdfssdsd"
