@@ -1,0 +1,14 @@
+post_date = "2026-09-05"
+title = "CMS Text-Only Test"
+alt_text = "Text-only pages have no comic image to describe."
+storyline = "CMS Testing"
+characters = [
+    "Eve",
+]
+tags = [
+    "cms",
+    "text-only",
+]
+post_text = """
+This is a text-only comic page created to exercise migration and CMS editing.
+"""
