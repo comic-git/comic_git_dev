@@ -1,0 +1,39 @@
+post_date = "2026-09-04"
+title = "CMS Multi-Image Fixture"
+alt_text = "Two simple numbered test images."
+storyline = "CMS Testing"
+characters = [
+    "Alice",
+    "Bob",
+]
+tags = [
+    "cms",
+    "multi-image",
+]
+
+[transcripts]
+Spanish = """
+NARRADOR: El primer panel de prueba es amarillo y tiene el numero uno.
+
+NARRADOR: El segundo panel de prueba es azul y tiene el numero dos.
+"""
+English = """
+**NARRATOR:** The first test panel is yellow and labeled one.
+
+**NARRATOR:** The second test panel is blue and labeled two.
+"""
+
+[social_media]
+"og:title" = "CMS Multi-Image Fixture"
+
+[[images]]
+filename = "first.svg"
+title = "Opening Panel"
+alt_text = "A yellow panel labeled one."
+screen_reader_text = "The first image in the multi-image fixture."
+
+[[images]]
+filename = "second.svg"
+title = ""
+alt_text = ""
+screen_reader_text = "The second image in the multi-image fixture."
