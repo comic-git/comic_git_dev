@@ -32,6 +32,18 @@ No credentials are stored in this repository.
 - Default cleanup removes obsolete ordinary and hidden files.
 - Explicitly excluded `.well-known` files survive deployment untouched.
 
+Verified on 2026-10-18 with real GitHub Actions deployments:
+
+- [Password run](https://github.com/comic-git/comic_git_dev/actions/runs/39163922770): passed.
+- [SSH-key run, attempt 2](https://github.com/comic-git/comic_git_dev/actions/runs/39163962005/attempts/2): passed.
+- HTTP checks passed for `/`, `/archive/`, `/comic/001/`, and `/sftp-test.txt`,
+  including the custom header and all remote-file checks above.
+
+The first key attempt exposed Windows newline conversion when piping the key
+through Python's text-mode subprocess input to `gh secret set`. Sending UTF-8
+bytes preserved LF endings and fixed it. Preserve LF line endings when setting
+the private-key secret; never print the key in workflow logs.
+
 This is an SFTP-only deployment account: the job cannot rely on remote shell
 commands. The site currently serves HTTP only. The engine normalizes absolute
 URLs to HTTPS, so RSS/canonical/social URLs need DNS and a trusted certificate
