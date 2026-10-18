@@ -1,11 +1,18 @@
-name: Auto-build HTML files
+name: SFTP deployment test
 
 on:
   push:
     branches:
-      - master
-  schedule:
-    - cron: '0 8 * * *'  # Runs at 8:00 AM UTC every day
+      - codex/sftp-test
+  workflow_dispatch:
+    inputs:
+      authentication:
+        description: SFTP authentication method to test
+        type: choice
+        options:
+          - password
+          - key
+        default: password
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -15,9 +22,16 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@v1.1
-#     with:
-#       DEPLOY_TARGET: neocities
-#       OUTPUT_DIR: public
-#     secrets:
-#       NEOCITIES_API_TOKEN: ${{ secrets.NEOCITIES_API_KEY }}
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@228fd4221ba41ed4e41771fd1acc6fcf7b86bbdc
+    with:
+      DEPLOY_TARGET: sftp
+      OUTPUT_DIR: build
+      SFTP_HOST: 34.182.0.21
+      SFTP_REMOTE_DIR: /home/comicgit/sftp-test.cvilbrandt.com
+      SFTP_HIDDEN_PATHS: .htaccess
+      SFTP_EXCLUDE_PATHS: .well-known
+    secrets:
+      SFTP_USERNAME: ${{ secrets.SFTP_TEST_USERNAME }}
+      SFTP_PASSWORD: ${{ inputs.authentication != 'key' && secrets.SFTP_TEST_PASSWORD || '' }}
+      SFTP_PRIVATE_KEY: ${{ inputs.authentication == 'key' && secrets.SFTP_TEST_PRIVATE_KEY || '' }}
+      SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_TEST_KNOWN_HOSTS }}

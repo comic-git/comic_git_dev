@@ -1,0 +1,2 @@
+# Verify that an explicitly allowed hidden file reaches Apache.
+Header set X-Comic-Git-Deploy "sftp"
