@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   call-build-site:
-    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@228fd4221ba41ed4e41771fd1acc6fcf7b86bbdc
+    uses: comic-git/comic_git_engine/.github/workflows/build_site.yaml@bbc590cab0665b43f18c3efaa22c7aafc3c587a0
     with:
       DEPLOY_TARGET: sftp
       OUTPUT_DIR: build
